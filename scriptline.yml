@@ -1,0 +1,10 @@
+---
+- hosts: all
+    become: true
+    tasks:
+    - name: gather ec2 facts
+      action: ec2_facts
+
+    - name: install apache on redhat or centos instances
+      shell: uptime
+      when: ansible_os_family == "RedHat
